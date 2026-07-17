@@ -35,18 +35,26 @@
     main {
       flex: 1;
       width: 100%;
-      max-width: 40rem;
+      max-width: 62rem;
       margin: 0 auto;
-      padding: 4rem 1.5rem 2rem;
+      padding: 2rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3.5rem;
+    }
+
+    .content {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      text-align: center;
+      align-items: flex-start;
+      text-align: left;
+      max-width: 34rem;
     }
 
     .avatar-wrap {
       position: relative;
-      margin-bottom: 1.75rem;
+      flex-shrink: 0;
     }
 
     .avatar-wrap::before {
@@ -62,7 +70,7 @@
       position: relative;
       z-index: 1;
       display: block;
-      width: 280px;
+      width: 340px;
       max-width: 100%;
       height: auto;
       border-radius: 18px;
@@ -87,7 +95,6 @@
 
     .intro {
       margin-top: 1.25rem;
-      max-width: 34rem;
       color: var(--text);
     }
 
@@ -95,9 +102,8 @@
       list-style: none;
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
       gap: 0.75rem;
-      margin-top: 2rem;
+      margin-top: 1.75rem;
     }
 
     .links a {
@@ -133,7 +139,7 @@
     }
 
     .notice {
-      margin-top: 2.75rem;
+      margin-top: 2rem;
       padding: 1.25rem 1.5rem;
       background: var(--panel);
       border: 1px solid var(--border);
@@ -160,16 +166,33 @@
 
     footer {
       text-align: center;
-      padding: 1.5rem;
+      padding: 1.25rem;
       color: var(--text-dim);
       font-size: 0.85rem;
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 860px) {
       main {
+        flex-direction: column;
+        gap: 2rem;
         padding-top: 3rem;
       }
 
+      .content {
+        align-items: center;
+        text-align: center;
+      }
+
+      .links {
+        justify-content: center;
+      }
+
+      .avatar {
+        width: 280px;
+      }
+    }
+
+    @media (max-width: 480px) {
       h1 {
         font-size: 1.65rem;
       }
@@ -185,6 +208,7 @@
     <div class="avatar-wrap">
       <img class="avatar" src="assets/DEC-IX_my_photo.jpg" alt="Yusuf Duman" width="1467" height="1515">
     </div>
+    <div class="content">
     <h1>Yusuf Duman</h1>
     <p class="role">Software Engineer</p>
     <p class="intro">I'm a software engineer, building backend systems primarily with C# and .NET. Curious, always learning, both fascinated by and skeptical of AI and agentic systems.</p>
@@ -214,6 +238,7 @@
       <span class="notice-label">Under construction</span>
       <p>This site is under construction. Once it's ready you'll find my projects and my blog here. Every post will be 100% human-written. I value authenticity in this age more than ever.</p>
     </section>
+    </div>
   </main>
   <footer>
     <p>&copy; 2026 Yusuf Duman</p>
